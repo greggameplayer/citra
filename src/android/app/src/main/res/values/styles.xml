@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Inherit from the material theme -->
-    <style name="CitraBase" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="DolphinBase" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Main theme colors -->
         <!-- Branding color for the app bar -->
         <item name="colorPrimary">@color/citra_orange</item>
@@ -18,16 +18,44 @@
     </style>
 
     <!-- Same as above, but use default action bar, and mandate margins. -->
-    <style name="CitraSettingsBase" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DolphinSettingsBase" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/citra_orange</item>
         <item name="colorPrimaryDark">@color/citra_orange_dark</item>
+    </style>
+
+    <!-- Inherit from the Base Dolphin Theme -->
+    <style name="DolphinWii" parent="DolphinBase">
+        <!-- Theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/dolphin_accent_wii</item>
+    </style>
+
+    <style name="DolphinGamecube" parent="DolphinBase">
+        <item name="colorAccent">@color/citra_accent</item>
+    </style>
+
+    <style name="DolphinWiiware" parent="DolphinBase">
+        <item name="colorAccent">@color/dolphin_accent_wiiware</item>
+    </style>
+
+    <!-- Inherit from the Base Dolphin Settings Theme -->
+    <style name="DolphinSettingsWii" parent="DolphinSettingsBase">
+        <item name="colorAccent">@color/dolphin_accent_wii</item>
+    </style>
+
+    <style name="DolphinSettingsGamecube" parent="DolphinSettingsBase">
+        <item name="colorAccent">@color/citra_accent</item>
+    </style>
+
+    <style name="DolphinSettingsWiiware" parent="DolphinSettingsBase">
+        <!-- Theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/dolphin_accent_wiiware</item>
     </style>
 
     <!-- Themes for Dialogs -->
 
-    <!-- Inherit from the Base Citra Dialog Theme -->
+    <!-- Inherit from the Base Dolphin Dialog Theme -->
 
-    <style name="CitraEmulationBase" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="DolphinEmulationBase" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/citra_orange</item>
         <item name="colorPrimaryDark">@color/citra_orange_dark</item>
         <item name="android:windowTranslucentNavigation">true</item>
@@ -40,7 +68,20 @@
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
     </style>
 
-    <style name="CitraEmulationTvBase" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Inherit from the Base Dolphin Emulation Theme -->
+    <style name="DolphinEmulationWii" parent="DolphinEmulationBase">
+        <item name="colorAccent">@color/dolphin_accent_wii</item>
+    </style>
+
+    <style name="DolphinEmulationGamecube" parent="DolphinEmulationBase">
+        <item name="colorAccent">@color/citra_accent</item>
+    </style>
+
+    <style name="DolphinEmulationWiiware" parent="DolphinEmulationBase">
+        <item name="colorAccent">@color/dolphin_accent_wiiware</item>
+    </style>
+
+    <style name="DolphinEmulationTvBase" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/citra_orange</item>
         <item name="colorPrimaryDark">@color/citra_orange_dark</item>
         <item name="android:windowTranslucentNavigation">true</item>
@@ -51,6 +92,19 @@
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
+    </style>
+
+    <!-- Inherit from the Base Dolphin Emulation Theme -->
+    <style name="DolphinEmulationTvWii" parent="DolphinEmulationTvBase">
+        <item name="colorAccent">@color/dolphin_accent_wii</item>
+    </style>
+
+    <style name="DolphinEmulationTvGamecube" parent="DolphinEmulationTvBase">
+        <item name="colorAccent">@color/citra_accent</item>
+    </style>
+
+    <style name="DolphinEmulationTvWiiware" parent="DolphinEmulationTvBase">
+        <item name="colorAccent">@color/dolphin_accent_wiiware</item>
     </style>
 
     <!-- Hax to make Tablayout render icons -->
@@ -59,7 +113,7 @@
     </style>
 
     <!-- Android TV Themes -->
-    <style name="CitraTvBase" parent="Theme.Leanback.Browse">
+    <style name="DolphinTvBase" parent="Theme.Leanback.Browse">
         <item name="colorPrimary">@color/citra_orange</item>
         <item name="colorPrimaryDark">@color/citra_orange_dark</item>
 
@@ -67,6 +121,11 @@
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
+    </style>
+
+    <style name="DolphinTvGamecube" parent="DolphinTvBase">
+        <item name="colorAccent">@color/citra_accent</item>
+        <item name="browseTitleViewLayout">@layout/titleview</item>
     </style>
 
     <style name="InGameMenuOption" parent="Widget.AppCompat.Button.Borderless">
@@ -83,12 +142,30 @@
     </style>
 
     <style name="OverlayInGameMenuOption" parent="InGameMenuOption">
-        <item name="android:textColor">@color/lb_control_button_text</item>
+        <item name="android:textColor">@color/button_text_color</item>
     </style>
+
+    <!-- You can also inherit from NNF_BaseTheme.Light -->
+    <style name="FilePickerTheme" parent="NNF_BaseTheme.Light">
+        <item name="colorPrimary">@color/citra_orange</item>
+        <item name="colorPrimaryDark">@color/citra_orange_dark</item>
+        <item name="colorAccent">@color/citra_accent</item>
+
+        <!--&lt;!&ndash; Setting a divider is entirely optional &ndash;&gt;-->
+        <item name="nnf_list_item_divider">?android:attr/listDivider</item>
+
+        <!-- Need to set this also to style create folder dialog -->
+        <item name="alertDialogTheme">@style/FilePickerAlertDialogTheme</item>
+
+        <!-- If you want to set a specific toolbar theme, do it here -->
+
+         <item name="nnf_toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
     <style name="FilePickerAlertDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
         <item name="colorPrimary">@color/citra_orange</item>
         <item name="colorPrimaryDark">@color/citra_orange_dark</item>
-        <item name="colorAccent">@android:color/holo_purple</item>
+        <item name="colorAccent">@color/citra_accent</item>
     </style>
 
 </resources>
